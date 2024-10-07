@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+Hide scrollbar for Chrome,
+Safari,
+and Edge ::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+* {
+  scrollbar-width: none; /* disables the scrollbar in Firefox */
+}
+
+/* Optional: For consistent cross-browser spacing */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  overflow: -moz-scrollbars-none; /* Firefox older versions */
+}
+
+.toggle-checkbox {
+  width: 40px;
+  height: 20px;
+  appearance: none;
+  background-color: #393e46;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-checkbox:checked {
+  background-color: #00adb5;
+}
+
+.toggle-checkbox:before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  background-color: #eeeeee;
+  border-radius: 50%;
+  transition: left 0.3s ease;
+}
+
+.toggle-checkbox:checked:before {
+  left: 22px;
+}
+
+@keyframes progress {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+.progress-bar {
+  animation: progress 3s ease-in-out infinite;
+}
